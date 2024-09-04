@@ -39,6 +39,10 @@ jobs:
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build ios --no-codesign
+      - uses: actions/upload-artifact@master
+        with:
+          name: ios-build
+          path: build/ios/iphoneos
 
   build_appbundle:
     name: Build Flutter (Android)
@@ -55,3 +59,7 @@ jobs:
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build appbundle
+      - uses: actions/upload-artifact@master
+        with:
+          name: apk-build
+          path: build/app/outputs/apk/release
