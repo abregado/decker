@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: const Text('Material App Bar'),
         ),
-        body: FirstWidget(),
+        body: const FirstWidget(),
       ),
     );
   }
@@ -24,12 +25,12 @@ class FirstWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ElevatedButton(
-          child: Text("Navigate"),
+          child: const Text("Navigate"),
           onPressed: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (_) => SecondWidget(),
+                    builder: (_) => const SecondWidget(),
                 )
             );
           },
